@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1571328840308.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "644209211",
+    "id" : "F2EACF7C",
+    "lastKnownWriteTime" : 1571333237,
+    "last_content_update" : 1571333237969,
+    "path" : "~/Documentos/Master/IPCD/R/Ejercicios18-10/Ejercicios18-10/Strings.R",
+    "project_path" : "Strings.R",
+    "properties" : {
+        "cursorPosition" : "21,10",
+        "scrollLine" : "8",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

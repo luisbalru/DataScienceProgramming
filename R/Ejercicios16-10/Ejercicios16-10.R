@@ -1,0 +1,184 @@
+# Introducción a la programación en Ciencia de Datos
+# Ejercicios 16-10
+# Luis Balderas Ruiz
+
+# *
+1:30
+# *
+seq(1,30,0.5)
+# *
+seq(from=20, by=0.5,length.out = 100)
+
+#* Instalar lubridate
+install.packages("lubridate")
+require("lubridate")
+meses <- c(1:12)
+# Meses
+month(ymd("010101")+months(meses-1),label=T)
+# Días
+dias <- c(1:7)
+wday(dias,label=T)
+# letras mayúsculas
+LETTERS
+# letras minúsculas
+letters
+# * letters
+rep(c(1:8),5)
+rep(letters[1:4],6)
+
+# VECTORES
+#* 
+c(1:20)
+c(20:1)
+c(c(1:20),c(20:1))
+#*
+sample(1:5,9,replace=T)
+# seq vs sequence : https://stackoverflow.com/questions/34884939/what-is-the-defference-between-seq-and-sequence-in-r
+
+#* 
+x <- c(2.3,3.3,4.4)
+x[2]
+
+#*
+
+z <- 1:10
+z <- as.character(z)
+z <- as.numeric(z)
+
+#*
+
+n <- 1:30
+sample(n,5)
+
+
+#*
+x <- ceiling(runif(100,1,4))
+x1 <- trunc(runif(100,1,4))
+
+#*
+sort(x) # vector de menor a mayor. También se puede poner al contrario
+sort(x, decreasing=T)
+
+
+#* order()
+
+
+#* 
+x2 <- rep(1:10,2)
+x2 <- unique(x2)
+
+#*
+x3 <- 1:100
+sample(x3,5,replace = T)
+sample(x3,5)
+
+# INDEXADO DE VECTORES
+
+#*
+
+c <- 1:100
+c[2:23]
+c[5] = 99
+
+#* 
+#which(rep(letters,2)=="c")
+# 3 29
+
+#> match(c("c","g"), letters)
+# [1] 3 7
+
+#*
+x <- c(-5,-1:6)
+x[x<0]
+x[x<=0]
+x[x>=3]
+x[x<0 | x<4]
+x[x>0 & x<4]
+
+#*
+x <- c(1,2,NA)
+is.na(x)
+x[x!=NA]
+# NO 
+
+#*
+list.files
+
+#*
+f <- function(x){exp(x)*cos(x)}
+f(seq(3,6,0.1))
+
+#*
+sumandos <- function(i){i^3+4*i^2}
+sum(sumandos(10:100))
+
+#*
+set.seed(50)
+xVec <- sample(0:999, 250, replace=T)
+yVec <- sample(0:999, 250, replace=T)
+yVec[yVec > 600]
+which(yVec > 600)
+xVec[xVec == (yVec>600)]
+length(yVec[yVec>200 & yVec < max(yVec)])
+length(xVec[xVec%%2==0])
+
+# FORMULA. PENDIENTE
+# (|x_1-mean(x)|^0.5, ...,|x_n-mean(x)|^0.5)
+## BÚSQUEDA DE VALORES IDÉNTICOS Y DISTINTOS
+
+#*
+intersect(month.name[1:4],month.name[3:7])
+#*
+x= month.name[1:4]
+y = month.name[3:7]
+setdiff(x,y)
+
+
+## FILTRADO DE VECTORES
+
+#*
+x <- c(6,1:3,NA,12)
+x[x>5]
+subset(x, x>5)
+# No se obtiene el mismo resultado. La primera me muestra el NA y la segunda no
+
+#*
+which(z^2>8)
+#*
+x <- 1:40
+ifelse(x%%2==0,"par","impar")
+#*
+x <- c(5,2,9,12)
+ifelse(x>6,2*x,3*x)
+
+# MATRICES
+M=matrix(data=5, nr=2, nc=2)
+M =matrix(1:6, 2, 3)
+M = matrix(1:6, 2, 3, byrow=TRUE)
+#*
+z <- 1:30
+M = matrix(z,3,10)
+M = matrix(z,3,10,byrow=T)
+#*
+M[,3]
+M[1,]
+M[2,]
+M[,2]
+M[1,2]
+M[,2:3]
+
+#*
+arr <- array(1:5,1:5)
+#*
+m1 <- matrix(1, nr = 2, nc = 2)
+m2 <- matrix(2, nr = 2, nc = 2)
+rbind(m1,m2)
+cbind(m1,m2)
+# Juntar por filas o por columnas
+#* 
+m1%*%m2
+#*
+t(M)
+#* 
+diag(2.1, nr = 3, nc = 5)
+diag(2.1, nr=2, nc=10)

@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1571237423405.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2318805300",
+    "id" : "2F33B215",
+    "lastKnownWriteTime" : 1571244833,
+    "last_content_update" : 1571244833769,
+    "path" : "~/Documentos/Master/IPCD/R/Ejercicios16-10/Ejercicios16-10.R",
+    "project_path" : "Ejercicios16-10.R",
+    "properties" : {
+        "cursorPosition" : "181,22",
+        "scrollLine" : "165",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1571332325323.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2054830660",
+    "id" : "BB409712",
+    "lastKnownWriteTime" : 1571332613,
+    "last_content_update" : 1571332613766,
+    "path" : "~/Documentos/Master/IPCD/R/Ejercicios18-10/Ejercicios18-10/IO.R",
+    "project_path" : "IO.R",
+    "properties" : {
+        "cursorPosition" : "2,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

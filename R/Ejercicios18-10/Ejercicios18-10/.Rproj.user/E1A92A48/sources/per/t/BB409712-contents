@@ -1,0 +1,7 @@
+# Ejercicios de Input/Output
+# Autor: Luis Balderas Ruiz
+
+## EJERCICIO 1
+n = scan("")
+s = scan("",what = character())
+cadena = rep(s,n)
