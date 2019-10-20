@@ -34,3 +34,7 @@ responses <- factor(responses, levels=c("Strongly Agree","Agree", "Disagree", "S
 #*
 x <- c("high","low","medium","high","high","low","medium")
 x <- factor(x,levels=unique(x),labels=c(1,2,3))
+
+## ACCESO Y SELECCIÓN DE SECCIONES EN DATAFRAMES
+
+

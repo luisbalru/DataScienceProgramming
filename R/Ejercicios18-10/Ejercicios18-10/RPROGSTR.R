@@ -31,10 +31,15 @@ montecarlo(10000000)
 
 ## EJERCICIO 3
 
-
-
-## EJERCICIO 4
+lista = list(runif(10,1,10),runif(10,5,9),runif(10,7,96),runif(10,4,10),runif(10,5,9))
+for (i in 1:5){
+  lista[i] = list(unlist(lista[i])[order(unlist(lista[i]))])
+}
+## EJERCICIO 4. No entiendo el enunciado
 
 
 
 ## EJERCICIO 5
+
+A = matrix(runif(20,1,14),nrow=5,ncol=4)
+l = list(A[A >7])
