@@ -1,0 +1,74 @@
+
+---
+title: "Factores"
+author: "Luis Balderas Ruiz"
+date: "20/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. Dado x = c(1, 2, 3, 3, 5, 3, 2, 4, NA), ¿cuáles son los levels de factor(x)?
+```{r}
+x <- c(1,2,3,3,5,3,2,4,NA)
+factor(x)
+```
+a) 1,2,3,4,5
+
+2. Dado x <- c(11, 22, 47, 47, 11, 47, 11) y la ejecución de la sentencia 
+factor(x, levels=c(11, 22, 47), ordered=TRUE) ¿cuál es el cuarto elemento de la salida? 
+```{r}
+x <- c(11,22,47,47,11, 47, 11)
+factor(x, levels=c(11, 22, 47), ordered=TRUE)
+```
+c) 47
+
+3. Para el factor z <- c("p", "a" , "g", "t", "b"), reemplaza el tercer elemento de z por "b".
+```{r}
+z <- c("p", "a" , "g", "t", "b")
+z[3] <- "b"
+```
+c) z[3] <- "b"
+
+4. Dado z <- factor(c("p", "q", "p", "r", "q")), escribe una expresión de R que cambie el level  "p" a "w",
+```{r}
+z <- factor(c("p", "q", "p", "r", "q"))
+levels(z)[levels(z) == "p"] <- "w"
+```
+5. Usa el dataset “iris”
+- escribe la expresión necesaria para convertir la variable “Sepal.Length”  en un factor con cinco niveles (levels) . Pista (mira la función table() y la función cut().
+```{r}
+iris$Sepal.Length=factor(cut(iris$Sepal.Length,5))
+```
+- escribe la expresión necesaria para generar una tabla de frecuencias con dos filas y tres columnas. Las filas deben referirse a si la variable “Sepal.length” es menor que 5 y las columnas a las diferentes especies. 
+```{r}
+table(iris$Petal.Length<5,iris$Species)
+```
+
+6. El factor responses se define como:
+
+responses <- factor(c("Agree", "Agree", "Strongly Agree","Disagree", "Agree")), 
+
+sin embargo nos damos cuenta que tiene un nuevo nivel, "Strongly Disagree", que no estaba presente cuando se creó. Añade el nuevo nivel al factor y conviértelo en un factor ordenado.
+```{r}
+responses <- factor(c("Agree", "Agree", "Strongly Agree","Disagree", "Agree"))
+responses <- factor(responses, levels=c("Strongly Agree","Agree", "Disagree", "Strongly Disagree"),ordered=TRUE)
+responses
+```
+7. Dado el factor: 
+
+x <- factor(c("high","low","medium","high","high","low","medium"))
+
+escribe la expresión en R que permita dar valores numéricos únicos para los distintos niveles (levels) de x según el siguiente esquema: 
+
+level high   => value 1
+level low    => value 2
+level medium => value 3
+
+```{r}
+x <- c("high","low","medium","high","high","low","medium")
+x <- factor(x,levels=unique(x),labels=c(1,2,3))
+x
+```
