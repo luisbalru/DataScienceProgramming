@@ -164,12 +164,28 @@ state.x77 = cbind(state.x77,ill_cat)
 - Encuentra que estado del oeste (west) tiene la formación mas baja y los mayores ingresos. ¿Que estado es?
 
 4. Vamos a trabajar con library(hflights). Inspecciona el dataframe y familiarízate con las variables
+```{r}
+install.packages("hflights")
+library("hflights")
+```
 - Busca todos los vuelos del 1 de enero
+```{r}
+row.names(hflights)[which(hflights$Month==1 & hflights$DayofMonth == 1)]
+```
 - Busca los vuelos que están solo operados por American Airlines (AA) o por United Airlines (UA)
+```{r}
+row.names(hflights)[which(hflights$UniqueCarrier=="AA" | hflights$UniqueCarrier=="UA")]
+```
 - Crea un nuevo dataframe con las variables vuelo, hora de salida, hora de llegada y número de vuelo.
+```{r}
+df = data.frame(hflights$TailNum,hflights$DepTime,hflights$ArrTime,hflights$FlightNum)
+```
 - Selecciona la variable vuelo y aquellas que contengan la palabra “Taxi” o ”Delay”
 - Crea una tabla que contenga el Unique carrier y el retraso de salida solo para aquellos vuelos con un retraso superior a una hora (60 minutos) ordenados de forma decreciente. 
-- Crea una nueva variable que se llame mph y que se calcula como la distancia/tiempo en el aire * 
+- Crea una nueva variable que se llame mph y que se calcula como la distancia/tiempo en el aire.
+```{r}
+df=cbind(df,mph=hflights$Distance/hflights$AirTime)
+```
 - Crea una nueva tabla organizada por destino y que para destino ponga la media de los retrasos en la llegada
 - Calcula para cada compañia el minimo y el máximo de  sus retrasos en salidas y llegadas. Ayuda: usa las funciones adicionales como contains_ para cada compañia calcula que dos dias del año fueron los que tuvieron mas retraso. Ten encuenta que el valor mas pequeño es el primero por defecto, asi que tendras que usar “desc” para poder hacer el ranking.
 
