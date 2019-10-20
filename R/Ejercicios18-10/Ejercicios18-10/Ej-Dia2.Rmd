@@ -190,13 +190,54 @@ df=cbind(df,mph=hflights$Distance/hflights$AirTime)
 - Calcula para cada compañia el minimo y el máximo de  sus retrasos en salidas y llegadas. Ayuda: usa las funciones adicionales como contains_ para cada compañia calcula que dos dias del año fueron los que tuvieron mas retraso. Ten encuenta que el valor mas pequeño es el primero por defecto, asi que tendras que usar “desc” para poder hacer el ranking.
 
 5. Vamos a trabajar con otro dataframe. Descarga el fichero student.txt de la plataforma PRADO, almacena la información en una variable llamada “students”. Ten en cuenta que los datos son tab-delimited y tienen un texto para cada columna. Comprueba que R ha leído correctamente el fichero imprimiendo el objeto en la pantalla *students*
+```{r}
+students = read.table("Datos-20191020/student.txt",sep="\t", header=TRUE)
+students
+```
 - Imprime solo los nombres de la columnas
+```{r}
+colnames(students)
+```
 - Llama a la columna height solo
+```{r}
+students$height
+```
 - ¿Cuantas observaciones hay en cada grupo?. Utiliza la función table().  Este commando se puede utilizar para crear tablas cruzadas (cross-tabulations)
+```{r}
+table(students$gender)
+table(students$population)
+```
 - Crea nuevas variables a partir de los datos que tenemos. Vamos a crear una variable nueva “sym” que contenga M si el genero es masculino y F si el genero es femenino. Busca en la ayuda información sobre la función ifelse(). Crea una segunda variable “colours” cuyo valor será “Blue” si el estudiante es de kuopio y “Red” si es de otro sitio.
+```{r}
+sym = vector()
+sym = ifelse(students$gender=="male",append(sym,"M"),append(sym,"F"))
+students = cbind(students,sym)
+colours = vector()
+colours = ifelse(students$population=="kuopio",append(colours,"Blue"),append(colours,"Red"))
+students = cbind(students,colours)
+```
 - Con los datos anteriores de height y shoesize y las nuevas variables crea un nuevo data.frame que se llame students.new
+```{r}
+students.new = data.frame(students)
+```
 - Comprueba que la clase de student.new es un dataframe
+```{r}
+is.data.frame(students.new)
+```
 - Crea dos subsets a partir del dataset student. Dividelo dependiendo del sexo. Para ello primero comprueba que estudiantes son hombres (male). Pista: busca información sobre la función which.
+```{r}
+males = which(students.new$sym == "M")
+females = which(students.new$sym == "F")
+```
 - Basándote en esa selección dada por which() toma solo esas filas del dataset student para generar el subset stundent.male
+```{r}
+student.male = students.new[males,]
+```
 - Repite el procedimiento para seleccionar las estudiantes mujeres (females)
+```{r}
+student.female = students.new[females,]
+```
 - Utiliza la function write.table() para guarder el contenido de student.new en un archivo.
+```{r}
+write.table(students.new,"Datos-20191020/students-new.txt",sep="\t",row.names = FALSE)
+```
