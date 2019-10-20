@@ -1,0 +1,181 @@
+---
+title: "Ejercicios Día 2. Factores, Dataframes  y Listas"
+author: "Luis Balderas Ruiz"
+date: "20/10/2019"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## ACCESO Y SELECCIÓN DE SECCIONES EN DATAFRAMES
+
+1. Vamos a trabajar con un ejemplo que viene por defecto en la instalación de R USArrests. Este data frame contiene la información para cada estado Americano de las tasas de criminales (por 100.000 habitantes). Los datos de las columnas se refieren a Asesinatos, violaciones y porcentaje de la población que vive en áreas urbanas. Los datos son de 1973. Contesta a las siguientes preguntas sobre los datos
+
+- Las dimensiones del dataframe 
+- La longitud del dataframe (filas o columnas) 
+- Numero  de columnas 
+
+- ¿Cómo calcularías el número de filas?
+  Utilizaría la función **nrow**:
+```{r}
+nrow(USArrests)
+```
+- Obtén el nombre de las filas y las columnas para este data frame
+  Utilizaría las funciones **names** para las columnas y **row.names** para las filas:
+```{r}
+names(USArrests)
+row.names(USArrests)
+```
+- Échale un vistazo a los datos, por ejemplo a las seis primeras filas
+```{r}
+head(USArrests,6)
+```
+- Ordena de forma decreciente las filas de nuestro data frame según el porcentaje de población en el área urbana. Para ello investiga la función order () y sus parámetros.
+  Indicamos que queremos ordenar por la columna UrbanPop de forma decreciente y con la coma expresamos que queremos seleccionar todas las columnas.
+```{r}
+USArrests[order(USArrests$UrbanPop,decreasing=TRUE),]
+```
+- ¿Podrías añadir un segundo criterio de orden?, ¿cómo?
+  Sí, añadiendo los nombres de las columnas a continuación (en orden de prioridad). Por ejemplo:
+```{r}
+USArrests[order(USArrests$UrbanPop,USArrests$Rape,decreasing=TRUE),]
+```
+  En caso de que dos filas coincidan en el valor de UrbanPop, se ordena de forma de mayor a menor por Rape.
+- Muestra por pantalla la columna con los datos de asesinato
+```{r}
+USArrests$Murder
+```
+- Muestra las tasas de asesinato para el segundo, tercer y cuarto estado 
+```{r}
+USArrests$Murder[2:4]
+```
+- Muestra las primeras cinco filas de todas las columnas
+```{r}
+head(USArrests,5)
+```
+- Muestra todas las filas para las dos primeras columnas
+```{r}
+USArrests[,1:2]
+```
+- Muestra todas las filas de las columnas 1 y 3
+```{r}
+USArrests[,c(1,3)]
+```
+- Muestra solo las primeras cinco filas de las columnas 1 y 2
+```{r}
+head(USArrests[,1:2],2)
+```
+- Extrae las filas para el índice Murder
+```{r}
+USArrests$Murder
+```
+Vamos con expresiones un poco mas complicadas:…
+
+- ¿Que estado tiene la menor tasa de asesinatos? ¿qué línea contiene esa información?, obtén esa información
+  Por un lado, tenemos que ver qué fila contiene el mínimo de asesinatos con la función which. Después, consultando el catálogo de nombres de fila, ver cuál es el nombre de la fila encontrada antes:
+```{r}
+row.names(USArrests)[which(USArrests$Murder == min(USArrests$Murder))]
+```
+El resultado es North Dakota (fila 34).
+
+- ¿Que estados tienen una tasa inferior al 4%?, obtén esa información
+```{r}
+row.names(USArrests)[which(USArrests$Murder < 4)]
+```
+- ¿Que estados estan en el cuartil superior (75) en lo que a poblacion en zonas urbanas se refiere? 
+  Primero, calculamos los cuartiles de la variable UrbanPop
+```{r}
+quantile(USArrests$UrbanPop)
+```
+El valor del tercer cuartil es 77.75. Ahora, establecemos la condición.
+```{r}
+row.names(USArrests)[which(USArrests$UrbanPop > 77.75)]
+```
+
+2. Carga el set de datos CO2 y realiza las siguientes acciones:
+
+- Ordena alfabéticamente los datos en función de la variable Plant. Recuerda que Plant es un factor. Imprime el resultado por pantalla para comprobarlo
+
+3.  Para este ejercicio vamos a usar el dataset state.x77. Asegurate de que el objeto es un dataframe, si no lo es fuerza su conversión.
+  Comprobamos que es un dataframe:
+```{r}
+is.data.frame(state.x77)
+```
+Como no lo es, fuerzo su conversión:
+```{r}
+state.x77 = data.frame(state.x77)
+```
+- Averigua cuantos estados tienen ingresos (Income) menores de 4300. Pista investiga subset().
+  Utilizo la función subset indicando la condición sobre Income.
+```{r}
+subset(state.x77, state.x77$Income>4300)
+```
+- Averigua cual es el estado con los ingresos mas altos.
+  Como ya hicimos en un ejercicio anterior,
+```{r}
+row.names(state.x77)[which(state.x77$Income==max(state.x77$Income))]
+```
+- Crea un data frame 2 df2 con los datasets existentes en R: state.abb, state.area, state.division, state.name, state.region. Las filas tienen que ser los nombres de los estados.
+```{r}
+df2 = data.frame(state.abb,state.area,state.division, state.region,row.names = state.name)
+```
+- Elimina de todas las variables la palabra state. Busca alguna función para strings.
+  Utilizo la funcion **sub**. Para ello:
+```{r}
+colnames(df2) = sub("state.","",colnames(df2))
+```  
+  Lo comprobamos:
+```{r}
+colnames(df2)
+```
+- Borra la variable div de df2. Estas borrando una única variable del dataframe
+  Asigno NULL a toda la columna para que desaparezca la variable:
+```{r}
+df2$division = NULL
+```
+- Añade por columnas el nuevo dataframe df2 al dataframe state.x77
+  Genero un nuevo dataframe con el contenido de los dos anteriores y se lo asigno a state.x77
+```{r}
+state.x77 = data.frame(state.x77,df2)
+```
+- Elimina las variables Life Exp, HS Grad, Frost, abb, y are.df
+  Igual que en el apartado anterior,
+```{r}
+state.x77$Life.Exp = NULL
+state.x77$HS.Grad = NULL
+state.x77$Frost = NULL
+state.x77$abb = NULL
+state.x77$area = NULL
+```
+- Añade una variable que categorice el nivel de formacion (illiteracy) de manera que 
+[0,1) is low, [1,2) is some, [2, inf) is high.
+Pista. Hazlo de dos formas usando la función cut() y usando ifelse()
+
+- Encuentra que estado del oeste (west) tiene la formación mas baja y los mayors ingresos. ¿Que estado es?
+
+4. Vamos a trabajar con library(hflights). Inspecciona el dataframe y familiarízate con las variables
+- Busca todos los vuelos del 1 de enero
+- Busca los vuelos que están solo operados por American Airlines (AA) o por United Airlines (UA)
+- Crea un nuevo dataframe con las variables vuelo, hora de salida, hora de llegada y número de vuelo.
+- Selecciona la variable vuelo y aquellas que contengan la palabra “Taxi” o ”Delay”
+- Crea una tabla que contenga el Unique carrier y el retraso de salida solo para aquellos vuelos con un retraso superior a una hora (60 minutos) ordenados de forma decreciente. 
+- Crea una nueva variable que se llame mph y que se calcula como la distancia/tiempo en el aire * 
+- Crea una nueva tabla organizada por destino y que para destino ponga la media de los retrasos en la llegada
+- Calcula para cada compañia el minimo y el máximo de  sus retrasos en salidas y llegadas. Ayuda: usa las funciones adicionales como contains_ para cada compañia calcula que dos dias del año fueron los que tuvieron mas retraso. Ten encuenta que el valor mas pequeño es el primero por defecto, asi que tendras que usar “desc” para poder hacer el ranking.
+
+5. Vamos a trabajar con otro dataframe. Descarga el fichero student.txt de la plataforma PRADO, almacena la información en una variable llamada “students”. Ten en cuenta que los datos son tab-delimited y tienen un texto para cada columna. Comprueba que R ha leído correctamente el fichero imprimiendo el objeto en la pantalla *students*
+- Imprime solo los nombres de la columnas
+- Llama a la columna height solo
+- ¿Cuantas observaciones hay en cada grupo?. Utiliza la función table().  Este commando se puede utilizar para crear tablas cruzadas (cross-tabulations)
+- Crea nuevas variables a partir de los datos que tenemos. Vamos a crear una variable nueva “sym” que contenga M si el genero es masculino y F si el genero es femenino. Busca en la ayuda información sobre la función ifelse(). Crea una segunda variable “colours” cuyo valor será “Blue” si el estudiante es de kuopio y “Red” si es de otro sitio.
+- Con los datos anteriores de height y shoesize y las nuevas variables crea un nuevo data.frame que se llame students.new
+- Comprueba que la clase de student.new es un dataframe
+- Crea dos subsets a partir del dataset student. Dividelo dependiendo del sexo. Para ello primero comprueba que estudiantes son hombres (male). Pista: busca información sobre la función which.
+- Basándote en esa selección dada por which() toma solo esas filas del dataset student para generar el subset stundent.male
+- Repite el procedimiento para seleccionar las estudiantes mujeres (females)
+- Utiliza la function write.table() para guarder el contenido de student.new en un archivo.
