@@ -152,11 +152,16 @@ state.x77$Frost = NULL
 state.x77$abb = NULL
 state.x77$area = NULL
 ```
-- Añade una variable que categorice el nivel de formacion (illiteracy) de manera que 
-[0,1) is low, [1,2) is some, [2, inf) is high.
+- Añade una variable que categorice el nivel de formacion (illiteracy) de manera que [0,1) is low, [1,2) is some, [2, inf) is high.
 Pista. Hazlo de dos formas usando la función cut() y usando ifelse()
+  Primera forma:
+```{r}
+ill_cat = vector()
+ill_cat = ifelse(state.x77$Illiteracy<1,append(ill_cat,"low"),ifelse(state.x77$Illiteracy<2,append(ill_cat,"some"),append(ill_cat,"high")))
+state.x77 = cbind(state.x77,ill_cat)
+```
 
-- Encuentra que estado del oeste (west) tiene la formación mas baja y los mayors ingresos. ¿Que estado es?
+- Encuentra que estado del oeste (west) tiene la formación mas baja y los mayores ingresos. ¿Que estado es?
 
 4. Vamos a trabajar con library(hflights). Inspecciona el dataframe y familiarízate con las variables
 - Busca todos los vuelos del 1 de enero
