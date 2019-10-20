@@ -1,0 +1,80 @@
+---
+title: "Listas-In-Out"
+author: "Luis Balderas Ruiz"
+date: "20/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+# Listas
+
+1. Las listas son colecciones de objetos que pueden tener modos diferentes (e.g. numéricos, vectores, arrays..).
+
+```{r}
+my_list <- list(name="Fred", wife="Mary", no.children=3, child.ages=c(4,7,9))
+```
+
+- Imprime los atributos y los nombres de todos los componentes de la lista
+```{r}
+attributes(my_list)
+my_list
+```
+- Devuelve el Segundo componente de la lista. El operador [[..]] devuelve el objeto almacenano en ese componente.
+```{r}
+my_list[[2]]
+```
+- ¿Que pasa si usamos '[..]'? 
+  Estaríamos mostrando tanto el atributo como el componente.
+  
+- Llama al componente_list[[2]] por su nombre
+- Recupera el Segundo element del cuarto componente de la lista 
+- Imprime la longitud, del cuarto elemento de la lista.
+- Reemplaza su contenido por un vector de 12 numeros del 1 al 12
+- Elimina el componente wife
+- Añade un element mas a la lista.
+
+# table()
+
+1. Vamos a trabajar con el dataset iris. La función  table() cuenta el numero de elementos repetidos en un vector. Es la función más básica de clustering. Cuenta el numero de entradas idénticas en la variable  Sepal.Length del dataset iris. 
+
+# Ordenar datos
+
+Vamos a volver a utilizar el datasets mtcars. 
+- Ordena este data set de forma ascendente según su valo de hp. PISTA: with()
+```{r}
+mtcars = mtcars[order(mtcars$hp, decreasing = TRUE),]
+mtcars
+```
+- Hazlo ahora de forma descendente
+```{r}
+mtcars = mtcars[order(mtcars$hp),]
+mtcars
+```
+- Calcula la media de la columna mpg. 
+```{r}
+mean(mtcars$mpg)
+```
+- Calcula la media de mpg para aquellos datos cuyo valor de hp sea menor que 150 y por separado para aquellos cuyo valor de hp sea mayor o igual a 150
+```{r}
+mean(mtcars$mpg[which(mtcars$hp <150)])
+mean(mtcars$mpg[which(mtcars$hp >=150)])
+```
+- Busca los valores únicos de la columna cyl de mtcars. PISTA unique()
+```{r}
+unique(mtcars$cyl)
+```
+- Obten los datos de mpg cyl disp hp para “Toyota Corolla"
+```{r}
+(mtcars %>% filter(rownames(mtcars)=="Toyota Corolla"))[c("mpg","cyl","disp","hp")]
+```
+- Crea una nueva variable mpgClass de tipo categórico cuyo valor es “Low“ si el valor de mpg es menor que la media de la columna mpg y “High” si es mayor que la media de mpg. PISTA ifelse(). Combina ese comando con with() para añadir la nueva variable a mtcars
+```{r}
+mpgClass = vector()
+mpgClass = ifelse(mtcars$mpg<mean(mtcars$mpg),append(mpgClass,"Low"),append(mpgClass,"High"))
+mtcars = cbind(mtcars,mpgClass)
+mtcars
+```
