@@ -35,10 +35,33 @@ lista = list(runif(10,1,10),runif(10,5,9),runif(10,7,96),runif(10,4,10),runif(10
 for (i in 1:5){
   lista[i] = list(unlist(lista[i])[order(unlist(lista[i]))])
 }
-## EJERCICIO 4. No entiendo el enunciado
+## EJERCICIO 4. 
 
-
-
+M = matrix(sample(1:100,20,replace=T),nrow=5,ncol=4)
+if(M[1,1]%%2==0){
+  mini=M[1,1]
+}else{
+  mini=-M[1,1]
+}
+v = 1:ncol(M)
+for (i in 1:ncol(M)){
+  for(j in 1:nrow(M)){
+    if(M[j,i]%%2==0){
+      if(M[j,i]<mini){
+        mini=M[j,i]
+      }
+    }
+    else{
+      if(-M[j,i]<mini){
+        mini=-M[j,i]
+      }
+    }
+  }
+  v[i] = mini
+  mini = 200 # Los valores de la matriz van de 1 a 100, luego está fuera del rango
+}  
+v = -v
+print(v)
 ## EJERCICIO 5
 
 A = matrix(runif(20,1,14),nrow=5,ncol=4)
