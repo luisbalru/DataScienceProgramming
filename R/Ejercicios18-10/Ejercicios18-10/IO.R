@@ -22,3 +22,6 @@ write.table(M[1:5,],file="inicio.txt",sep=",",row.names = F,col.names=F)
 write.table(M[-5:0,],file="fin.txt",sep=",",row.names = F,col.names=F)
 
 ## EJERCICIO 5
+f = scan("")
+c=scan("")
+cat(rep(paste(rep("x",c),collapse=""),f),sep="\n")

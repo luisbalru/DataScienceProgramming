@@ -3,7 +3,8 @@
 # Autor: Luis Balderas Ruiz
 
 ## EJERCICIO 1: Acrónimo
-acron = paste(substr(nombreC[1],1,1),".",nombreC[2],nombreC[3],sep="")
+nombreC = c("Luis", "Balderas", "Ruiz")
+acron = paste(paste(substr(nombreC[1],1,1),".",sep=""),nombreC[2],nombreC[3],sep=" ")
 
 ## EJERCICIO 2: Meses impares
 fechas = c("01-01-2019","01-02-2019","01-03-2019","01-04-2019","01-05-2019","01-06-2019","01-07-2019")
