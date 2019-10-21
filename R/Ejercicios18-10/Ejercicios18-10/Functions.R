@@ -25,8 +25,15 @@ unir(c(1,1,2,3),c(2,3,5,5,7))
 
 ## EJERCICIO 4
 vyc = function(cadena){
-  
+  vocales = gsub("[^aeiouAEIOU]","",cadena)
+  consonantes = str_remove_all(cadena,"[aeiou]")
+  consonantes = str_remove_all(consonantes," ")
+  return(list(vocales,consonantes))
 }
+cad = "Hola me llamo Luis"
+l = vyc(cad)
+print(l[1])
+print(l[2])
 
 ## EJERCICIO 5
 partir = function(v,x,y){
