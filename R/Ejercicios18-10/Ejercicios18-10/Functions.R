@@ -24,6 +24,8 @@ unir = function(u,v){
 unir(c(1,1,2,3),c(2,3,5,5,7))
 
 ## EJERCICIO 4
+install.packages("tidyverse")
+library("tidyverse")
 vyc = function(cadena){
   vocales = gsub("[^aeiouAEIOU]","",cadena)
   consonantes = str_remove_all(cadena,"[aeiou]")
