@@ -32,8 +32,9 @@ montecarlo(10000000)
 ## EJERCICIO 3
 
 lista = list(runif(10,1,10),runif(10,5,9),runif(10,7,96),runif(10,4,10),runif(10,5,9))
+posiciones = lapply(lista,order)
 for (i in 1:5){
-  lista[i] = list(unlist(lista[i])[order(unlist(lista[i]))])
+  lista[i] = list(unlist(lista[i])[unlist(posiciones[i])])
 }
 ## EJERCICIO 4. 
 
