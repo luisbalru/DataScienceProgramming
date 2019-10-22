@@ -18,7 +18,7 @@ creciente(10:1)
 ## EJERCICIO 2
 montecarlo = function(N){
   hits = 0
-  for(i in c(1:N)){
+  for(i in 1:N){
     r = runif(2,0,1)
     if(r[2]<r[1]^2)
       hits = hits + 1
@@ -39,30 +39,13 @@ for (i in 1:5){
 ## EJERCICIO 4. 
 
 M = matrix(sample(1:100,20,replace=T),nrow=5,ncol=4)
-if(M[1,1]%%2==0){
-  mini=M[1,1]
-}else{
-  mini=-M[1,1]
-}
-v = 1:ncol(M)
-for (i in 1:ncol(M)){
-  for(j in 1:nrow(M)){
-    if(M[j,i]%%2==0){
-      if(M[j,i]<mini){
-        mini=M[j,i]
-      }
-    }
-    else{
-      if(-M[j,i]<mini){
-        mini=-M[j,i]
-      }
-    }
-  }
-  v[i] = mini
-  mini = 200 # Los valores de la matriz van de 1 a 100, luego está fuera del rango
-}  
-v = -v
-print(v)
+impares = M %% 2 != 0
+M[impares] = -M[impares]
+minimos = apply(M,2,min)
+M[impares] = -M[impares]
+pos_negativos = minimos < 0
+minimos[pos_negativos] = -minimos[pos_negativos]
+
 ## EJERCICIO 5
 
 A = matrix(runif(20,1,14),nrow=5,ncol=4)
