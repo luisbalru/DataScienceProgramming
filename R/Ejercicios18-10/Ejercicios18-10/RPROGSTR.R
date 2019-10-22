@@ -40,10 +40,13 @@ for (i in 1:5){
 
 M = matrix(sample(1:100,20,replace=T),nrow=5,ncol=4)
 impares = M %% 2 != 0
+# Cambio el signo a los impares
 M[impares] = -M[impares]
 minimos = apply(M,2,min)
+# Devuelvo el signo original
 M[impares] = -M[impares]
 pos_negativos = minimos < 0
+# Devuelvo el signo original
 minimos[pos_negativos] = -minimos[pos_negativos]
 
 ## EJERCICIO 5
