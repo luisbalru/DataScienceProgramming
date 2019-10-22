@@ -52,4 +52,4 @@ minimos[pos_negativos] = -minimos[pos_negativos]
 ## EJERCICIO 5
 
 A = matrix(runif(20,1,14),nrow=5,ncol=4)
-l = list(A[A >7])
+mayores_siete = apply(A,1,function(A){A[A>7]})
