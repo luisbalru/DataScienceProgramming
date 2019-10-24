@@ -199,3 +199,22 @@ print(trocear("abecedario",2))
 print("Trozos de 3 letras para abecedario")
 print(trocear("abecedario",3))
 """
+
+# 12. Escribe una función anagrama(palabra1, palabra2) que determine si
+# es una anagrama.
+
+def anagrama(palabra1, palabra2):
+    l1 = len(palabra1)
+    l2 = len(palabra2)
+    if l1 != l2:
+        return False
+    for i in range(l1):
+        if palabra1[i] not in palabra2:
+            return False
+    return True
+
+print("Ejercicio 12: Escribe una función anagrama(palabra1, palabra2) que determine si es una anagrama.")
+print("Para trama y marta...")
+print(anagrama("trama","marta"))
+print("¿Y trama y rama?")
+print(anagrama("trama", "rama"))
