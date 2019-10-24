@@ -162,3 +162,20 @@ print(palindromo("Amor a Roma"))
 print("¿Es palíndromo hola que tal?")
 print(palindromo("hola que tal"))
 """
+
+# 10. Escribe una función orden_alfabetico(palabra) que determine si las letras que forman
+# palabra aparecen en orden alfabético. Por ejemplo: 'abejo'
+
+def orden_alfabetico(palabra):
+    l = len(palabra)
+    for i in range(l):
+        if i+1 < l:
+            if palabra[i] > palabra[i+1]:
+                return False
+    return True
+
+print("Ejercicio 10: Escribe una función orden_alfabetico(palabra) que determine si las letras que forman palabra aparecen en orden alfabético.")
+print("Probamos con abejo")
+print(orden_alfabetico("abejo"))
+print("¿Y abeja?")
+print(orden_alfabetico("abeja"))
