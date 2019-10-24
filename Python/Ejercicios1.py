@@ -128,4 +128,19 @@ print("Letras en común en las palabras noria y novia")
 print(comunes("noria","novia"))
 print("Letras en común en las palabras pana y tapas")
 print(comunes("pana","tapas"))
+
+
+# 8. Escribe una función eco_palabra(palabra) que devuelva una cadena formada por palabra
+# repetida tantas veces como sea su longitud. Por ejemplo 'hola' -> 'holaholaholahola'
+
+def eco_palabra(palabra):
+    l = len(palabra)
+    eco = ""
+    for i in range(l):
+        eco = eco + palabra
+    return eco
+
+print("Ejercicio 8: Escribe una función eco_palabra(palabra) que devuelva una cadena formada por palabra repetida tantas veces como sea su longitud. Por ejemplo 'hola' -> 'holaholaholahola'")
+print("Eco de hola: " + eco_palabra("hola"))
+print("Eco de abecedario: " + eco_palabra("abecedario"))
 """
