@@ -18,3 +18,8 @@ barplot(union, beside=T)
 # EJERCICIO 4
 pie(p,col=rainbow(length(t)),clockwise = TRUE, main="Edad por sectores")
 dotchart(t,main="Puntos para las edades")
+
+# EJERCICIO 5
+m = lm(dist~speed, data=cars)
+plot(cars$speed,cars$dist, main="Gráfica velocidad/distancia", xlab="Velocidad", ylab = "Distancia")
+abline(m,col="red")
