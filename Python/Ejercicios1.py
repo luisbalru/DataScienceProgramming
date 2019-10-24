@@ -104,4 +104,28 @@ print("Para absd, dsba")
 print(es_inversa("absd","dsba"))
 print("Para manolo,olon")
 print(es_inversa("manolo","olon"))
+
+
+# 7. Escribe una función comunes(palabra1, palabra2) que devuelva una cadena formada por los
+# caracteres comunes a las dos palabras.
+
+def comunes(palabra1,palabra2):
+    letras_comunes = ""
+    l1 = len(palabra1)
+    l2 = len(palabra2)
+    if l1 < l2:
+        for i in range(l1):
+            if palabra1[i] in palabra2:
+                letras_comunes = letras_comunes + palabra1[i]
+    else:
+        for i in range(l2):
+            if palabra2[i] in palabra1:
+                letras_comunes = letras_comunes + palabra2[i]
+    return letras_comunes
+
+print("Ejercicio 7: Escribe una función comunes(palabra1, palabra2) que devuelva una cadena formada por los caracteres comunes a las dos palabras.")
+print("Letras en común en las palabras noria y novia")
+print(comunes("noria","novia"))
+print("Letras en común en las palabras pana y tapas")
+print(comunes("pana","tapas"))
 """
