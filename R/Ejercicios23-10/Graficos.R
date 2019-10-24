@@ -14,3 +14,5 @@ t=xtabs(~ Age,data=quine);
 p=prop.table(xtabs(~ Age,data=quine))
 union = cbind(t,p)
 barplot(union, beside=T)
+
+# EJERCICIO 4
