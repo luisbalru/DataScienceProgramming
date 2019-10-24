@@ -84,4 +84,24 @@ print("La palabra elegida es " + palabra)
 print("Las vocales son:")
 print(vocales(palabra))
 
+
+# 6. Escribe una función es_inversa(palabra1, palabra2) que devuelve True si una palabra es la
+# misma que la otra pero con los caracteres en orden inverso. Por ejemplo 'absd' y 'dsba'
+
+def es_inversa(palabra1,palabra2):
+    p1 = len(palabra1)
+    p2 = len(palabra2)
+    if p1 == p2:
+        for i in range(p1):
+            if palabra1[i] != palabra2[p2-i-1]:
+                return False
+        return True
+    else:
+        return False
+
+print("Ejercicio 6:  Escribe una función es_inversa(palabra1, palabra2) que devuelve True si una palabra es la misma que la otra pero con los caracteres en orden inverso. Por ejemplo 'absd' y 'dsba'")
+print("Para absd, dsba")
+print(es_inversa("absd","dsba"))
+print("Para manolo,olon")
+print(es_inversa("manolo","olon"))
 """
