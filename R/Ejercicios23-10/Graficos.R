@@ -16,3 +16,5 @@ union = cbind(t,p)
 barplot(union, beside=T)
 
 # EJERCICIO 4
+pie(p,col=rainbow(length(t)),clockwise = TRUE, main="Edad por sectores")
+dotchart(t,main="Puntos para las edades")
