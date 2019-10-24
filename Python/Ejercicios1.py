@@ -48,3 +48,21 @@ print(buscar(palabra,'s'))
 print("Índice de la letra a")
 print(buscar(palabra,'a'))
 """
+
+# 4. Escribe una función num_vocales(palabra) que devuelva el número de vocales que aparece
+# en la palabra.
+
+def num_vocales(palabra):
+    vocales = "aeiou"
+    num_voc = 0
+    for l in palabra:
+        if l in vocales:
+            num_voc = num_voc + 1
+    return num_voc
+
+print("Ejercicio 4: Escribe una función num_vocales(palabra) que devuelva el número de vocales que aparece en la palabra.")
+palabra = "abecedario"
+print("La palabra elegida es " + palabra)
+print("El número de vocales es " + str(num_vocales(palabra)))
+print("Otra palabra, por ejemplo, elefante")
+print("El número de vocales es " + str(num_vocales("elefante")))
