@@ -161,7 +161,7 @@ print("¿Es palíndromo Amor a Roma?")
 print(palindromo("Amor a Roma"))
 print("¿Es palíndromo hola que tal?")
 print(palindromo("hola que tal"))
-"""
+
 
 # 10. Escribe una función orden_alfabetico(palabra) que determine si las letras que forman
 # palabra aparecen en orden alfabético. Por ejemplo: 'abejo'
@@ -179,3 +179,23 @@ print("Probamos con abejo")
 print(orden_alfabetico("abejo"))
 print("¿Y abeja?")
 print(orden_alfabetico("abeja"))
+
+
+# 11. Escribe una función trocear(palabra, num) que devuelva una lista con trozos de tamaño
+# num de palabra.
+
+def trocear(palabra,num):
+    trozos = []
+    i = 0
+    l = len(palabra)
+    while i < l:
+        trozos.append(palabra[i:(i+num)])
+        i = i + num
+    return trozos
+
+print("Ejercicio 11: Escribe una función trocear(palabra, num) que devuelva una lista con trozos de tamaño num de palabra.")
+print("Trozos de 2 letras para abecedario")
+print(trocear("abecedario",2))
+print("Trozos de 3 letras para abecedario")
+print(trocear("abecedario",3))
+"""
