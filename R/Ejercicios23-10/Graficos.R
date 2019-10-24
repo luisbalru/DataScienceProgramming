@@ -6,6 +6,11 @@ boxplot(iris$Sepal.Length,iris$Sepal.Width,iris$Petal.Length,iris$Petal.Width,na
 
 # EJERCICIO 2
 M = matrix(runif(800),nrow=200,ncol=4)
+plot(1:200,M[,1],type="l",col="blue",main="Tasa de acierto clasificación", xlab = "Experimento",ylab="Accuracy",ylim=c(0,1.2))
+lines(1:200,M[,2],col="red")
+lines(1:200,M[,3],col="green")
+lines(1:200,M[,4],col="black")
+legend(0,1.27,legend=c("Alg. 1", "Alg. 2","Alg. 3", "Alg. 4"),col=c("blue","red","green","black"),lty=1, cex=0.8)
 
 # EJERCICIO 3
 library(MASS); 
