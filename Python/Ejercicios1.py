@@ -143,4 +143,22 @@ def eco_palabra(palabra):
 print("Ejercicio 8: Escribe una función eco_palabra(palabra) que devuelva una cadena formada por palabra repetida tantas veces como sea su longitud. Por ejemplo 'hola' -> 'holaholaholahola'")
 print("Eco de hola: " + eco_palabra("hola"))
 print("Eco de abecedario: " + eco_palabra("abecedario"))
+
+
+# 9. Escribe una función palindromo(frase) que determine si frase es un palíndromo. Es decir,
+# que se lea igual de izquierda a derecha que de derecha a izquierda (sin considerar espacios).
+
+def palindromo(frase):
+    l = len(frase)
+    frase = frase.lower()
+    for i in range(l):
+        if(frase[i] != frase[l-i-1]):
+            return False
+    return True
+
+print("Ejercicio 9: Escribe una función palindromo(frase) que determine si frase es un palíndromo.")
+print("¿Es palíndromo Amor a Roma?")
+print(palindromo("Amor a Roma"))
+print("¿Es palíndromo hola que tal?")
+print(palindromo("hola que tal"))
 """
