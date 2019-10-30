@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # Introducción a la programación en ciencia de datos
 # Ejercicios 1
 # Autor: Luis Balderas Ruiz
@@ -6,7 +8,11 @@
 # aparece una letra en una palabra.
 
 def contar_letras(palabra,letra):
-    return palabra.count(letra)
+    contador = 0
+    for i in range(len(palabra)):
+        if palabra[i] == letra:
+            contador += 1
+    return(contador)
 
 print("Ejercicio 1: Escribe una función contar_letras(palabra, letra) que devuelva el número de veces que aparece una letra en una palabra.")
 palabra = "albaricoque"
@@ -19,8 +25,7 @@ print("Número de m's")
 print(contar_letras(palabra,"m"))
 
 print("\n")
-print("Pulsa intro para pasar al siguiente ejercicio")
-input()
+input("Pulsa intro para pasar al siguiente ejercicio")
 print(" -------------------------------------------------------- ")
 print("\n")
 
@@ -28,7 +33,11 @@ print("\n")
 # no contiene el carácter letra.
 
 def eliminar_letras(palabra,letra):
-    return palabra.replace(letra, '')
+    nueva_palabra = ""
+    for i in range(len(palabra)):
+        if palabra[i] != letra:
+            nueva_palabra = nueva_palabra + palabra[i]
+    return(nueva_palabra)
 
 print("Ejercicio 2: Escribe una función eliminar_letras(palabra, letra) que devuelva una versión de palabra que no contiene el carácter letra.")
 palabra = "banana"
@@ -48,7 +57,10 @@ print("\n")
 # encontrar sub dentro de palabra o -1 en caso de que no esté.
 
 def buscar(palabra, sub):
-    return palabra.find(sub)
+    for i in range(len(palabra)):
+        if palabra[i] == sub:
+            return(i)
+    return(-1)
 
 print("Ejercicio 3:  Escribe una función buscar(palabra, sub) que devuelva la posición en la que se puede encontrar sub dentro de palabra o -1 en caso de que no esté.")
 palabra = "estoico"
