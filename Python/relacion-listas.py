@@ -74,7 +74,7 @@ print("Mezcla y orden ascendente: " + str(mezclar(l1,l2)))
 
 input("Pulsa enter para seguir")
 
-"""
+
 def traspuesta(matriz):
     traspuesta = []
     for i in range(len(matriz)):
@@ -93,19 +93,35 @@ print("La traspuesta es" + str(t_matriz))
 
 input("Pulsa enter para seguir")
 
-"""
+
 def contar_letras(palabra):
+    lista_auxiliar = []
+    for i in range(len(palabra)):
+        if palabra[i] not in lista_auxiliar:
+            lista_auxiliar.append(palabra[i])
+            lista_auxiliar.append(1)
+        else:
+            lista_auxiliar[lista_auxiliar.index(palabra[i])+1] += 1
+    lista_final = []
+    for i in range(len(lista_auxiliar)//2):
+        lista_final.append((lista_auxiliar[2*i],lista_auxiliar[2*i+1]))
+    return(lista_final)
 
 print("7. Escribe una función contar_letras(palabra) que tome una palabra como argumento y devuelva una lista de pares en la que aparece cada letra junto con el número de veces que aparece esa letra en la palabra.")
-
+palabra = "abecedario"
+print("La palabra es " + palabra)
+print("El número de letras es:")
+print(contar_letras(palabra))
 input("Pulsa enter para seguir")
 
+"""
 def eliminar(l1,l2):
 
 print("8. Escribe una función eliminar(l1, l2) que dadas dos listas devuelva una lista en la que estén todos los elementos de l1 que no están en l2.")
 
 input("Pulsa enter para seguir")
 
+"""
 def suma_acumulada(numeros):
 
 print("9. Escribe una función suma_acumulada(numeros) a la que se le pase una lista de números y devuelva una lista en la que el elemento i-ésimo se obtiene como la suma de los elementos de la lista entre las posiciones 0 e i")
