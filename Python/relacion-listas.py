@@ -114,11 +114,19 @@ print("El número de letras es:")
 print(contar_letras(palabra))
 input("Pulsa enter para seguir")
 
-"""
+
 def eliminar(l1,l2):
+    lista = []
+    for a in l1:
+        if a not in l2:
+            lista.append(a)
+    return(lista)
 
 print("8. Escribe una función eliminar(l1, l2) que dadas dos listas devuelva una lista en la que estén todos los elementos de l1 que no están en l2.")
-
+l1 = list(range(8))
+l2 = list(range(15))
+print("Las listas son " +  str(l2) + " y " + str(l1))
+print("Eliminar: " + str(eliminar(l2,l1)))
 input("Pulsa enter para seguir")
 
 """
@@ -128,6 +136,7 @@ print("9. Escribe una función suma_acumulada(numeros) a la que se le pase una l
 
 input("Pulsa enter para seguir")
 
+"""
 def parejas(lista):
 
 print("10. Escribe una función parejas(lista) que calcule las parejas distintas de valores que aparecen en una lista.")
