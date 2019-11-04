@@ -3,10 +3,17 @@
 # Autor: Luis Balderas Ruiz
 
 def sum_nums_lista(numeros):
+    sum = 0
+    for i in range(len(numeros)):
+        sum += numeros[i]
+    return(sum)
 
 
 print("1. Escribe una función sum_nums_lista(numeros) que sume todos los números de una lista. Compara el tiempo entre usar o no range")
-
+l = list(range(15))
+print("La lista es: ")
+print(l)
+print("Su suma es " + str(sum_nums_lista(l)))
 
 input("Pulsa enter para seguir")
 
@@ -16,7 +23,7 @@ def contar_numeros_impares(numeros):
 print("2. Escribe una función contar_numeros_impares(numeros) que cuente la cantidad de número impares que hay en una lista.")
 
 input("Pulsa enter para seguir")
-
+"""
 def numeros_pares(numeros):
 
 
@@ -93,3 +100,4 @@ print("14. Escribe una función que saque de forma aleatoria todas las cartas de
 
 
 input("Pulsa enter para seguir")
+"""
