@@ -62,3 +62,15 @@ def suma_acumulada(numeros):
 print("9. Escribe una función suma_acumulada(numeros) a la que se le pase una lista de números y devuelva una lista en la que el elemento i-ésimo se obtiene como la suma de los elementos de la lista entre las posiciones 0 e i")
 
 input("Pulsa enter para seguir")
+
+def parejas(lista):
+
+print("10. Escribe una función parejas(lista) que calcule las parejas distintas de valores que aparecen en una lista.")
+
+input("Pulsa enter para seguir")
+
+def cadena_mas_larga(cadenas):
+
+print("11. Escribe una función cadena_mas_larga(cadenas) a la que se pasa una lista de palabras y que devuelva la palabra más larga.")
+
+input("Pulsa enter para seguir")
