@@ -164,19 +164,24 @@ print("Número de parejas: " + str(parejas(lista)))
 
 input("Pulsa enter para seguir")
 
-"""
+
 def cadena_mas_larga(cadenas):
+    return(max(cadenas))
 
 print("11. Escribe una función cadena_mas_larga(cadenas) a la que se pasa una lista de palabras y que devuelva la palabra más larga.")
-
+l = ["hola","holaa","holaaaa"]
+print("Las palabras son " + str(l))
+print("La más larga es " + str(cadena_mas_larga(l)))
 input("Pulsa enter para seguir")
 
+"""
 def suma_primer_digito(numeros):
 
 print("12. Escribe una función suma_primer_digito(numeros) que devuelva la suma de los primeros dígitos de todos los números de la lista que se pasa como argumento.")
 
 input("Pulsa enter para seguir")
 
+"""
 def dispersa(v):
 
 print("13. Escribe una función dispersa(v) a la que se le pase una lista representando un vector disperso y que devuelva el número de elementos del vector junto con una lista de pares (pos, elem) con cada una de las posiciones en las que hay un elemento no nulo y el elemento.")
