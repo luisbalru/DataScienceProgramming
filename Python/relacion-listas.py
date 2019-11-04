@@ -56,3 +56,9 @@ def eliminar(l1,l2):
 print("8. Escribe una función eliminar(l1, l2) que dadas dos listas devuelva una lista en la que estén todos los elementos de l1 que no están en l2.")
 
 input("Pulsa enter para seguir")
+
+def suma_acumulada(numeros):
+
+print("9. Escribe una función suma_acumulada(numeros) a la que se le pase una lista de números y devuelva una lista en la que el elemento i-ésimo se obtiene como la suma de los elementos de la lista entre las posiciones 0 e i")
+
+input("Pulsa enter para seguir")
