@@ -86,3 +86,10 @@ def dispersa(v):
 print("13. Escribe una función dispersa(v) a la que se le pase una lista representando un vector disperso y que devuelva el número de elementos del vector junto con una lista de pares (pos, elem) con cada una de las posiciones en las que hay un elemento no nulo y el elemento.")
 
 input("Pulsa enter para seguir")
+
+def sacar_carta(baraja):
+
+print("14. Escribe una función que saque de forma aleatoria todas las cartas de una baraja hasta que quede vacía. Para ello debe usar unalista que tenga inicialmente todas las cartas.")
+
+
+input("Pulsa enter para seguir")
