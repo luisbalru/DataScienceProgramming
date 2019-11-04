@@ -1,7 +1,7 @@
 # Introducción a la programación en Ciencia de Datos
 # Relación de ejercicios sobre listas
 # Autor: Luis Balderas Ruiz
-
+"""
 def sum_nums_lista(numeros):
     sum = 0
     for i in range(len(numeros)):
@@ -18,20 +18,36 @@ print("Su suma es " + str(sum_nums_lista(l)))
 input("Pulsa enter para seguir")
 
 def contar_numeros_impares(numeros):
+    contador = 0
+    for i in range(len(numeros)):
+        if numeros[i] % 2 != 0:
+            contador += 1
+    return(contador)
 
 
 print("2. Escribe una función contar_numeros_impares(numeros) que cuente la cantidad de número impares que hay en una lista.")
+l = list(range(15))
+print("La lista es: ")
+print(l)
+print("El número de impares es " + str(contar_numeros_impares(l)))
 
 input("Pulsa enter para seguir")
 """
 def numeros_pares(numeros):
-
+    l = []
+    for i in range(len(numeros)):
+        if numeros[i] % 2 == 0:
+            l.append(numeros[i])
+    return(l)
 
 print("3. Escribe una función numeros_pares(numeros) que devuelva los números pares que hay en una lista.")
-
+l = list(range(15))
+print("La lista es: ")
+print(l)
+print("El número de pares es " + str(numeros_pares(l)))
 
 input("Pulsa enter para seguir")
-
+"""
 def combinar_listas(l1,l2):
 
 
