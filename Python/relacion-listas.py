@@ -32,7 +32,7 @@ print(l)
 print("El número de impares es " + str(contar_numeros_impares(l)))
 
 input("Pulsa enter para seguir")
-"""
+
 def numeros_pares(numeros):
     l = []
     for i in range(len(numeros)):
@@ -44,24 +44,29 @@ print("3. Escribe una función numeros_pares(numeros) que devuelva los números 
 l = list(range(15))
 print("La lista es: ")
 print(l)
-print("El número de pares es " + str(numeros_pares(l)))
+print("Los pares son " + str(numeros_pares(l)))
 
 input("Pulsa enter para seguir")
-"""
-def combinar_listas(l1,l2):
 
+def combinar_listas(l1,l2):
+    return l1+l2
 
 print("4. Escribe una función combinar_listas(l1, l2) que devuelva una lista que esté formada por todos los elementos de l1 y a continuación todos los de l2")
-
+l1 = list(range(14))
+l2 = list(range(17,19))
+print("Lista 1: " + str(l1))
+print("Lista 2: " + str(l2))
+print("Combinación: " + str(combinar_listas(l1,l2)))
 input("Pulsa enter para seguir")
 
-
+"""
 def mezclar(la,lb):
 
 print("5. Escribe una función mezclar(la, lb) que dadas dos listas ordenadas devuelva una lista conteniendo los elementos de ambas listas ordenados de forma ascendente.")
 
 input("Pulsa enter para seguir")
 
+"""
 def traspuesta(matriz):
 
 print("6. La traspuesta de una matriz se obtiene intercambiado filas y columna. Escribe una función que devuelva la traspuesta de una matriz.")
