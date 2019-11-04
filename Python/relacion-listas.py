@@ -59,10 +59,18 @@ print("Lista 2: " + str(l2))
 print("Combinación: " + str(combinar_listas(l1,l2)))
 input("Pulsa enter para seguir")
 
-"""
+
 def mezclar(la,lb):
+    l = la+lb
+    l.sort()
+    return(l)
 
 print("5. Escribe una función mezclar(la, lb) que dadas dos listas ordenadas devuelva una lista conteniendo los elementos de ambas listas ordenados de forma ascendente.")
+l1 = list(range(14,7,-1))
+l2 = list(range(19,17,-1))
+print("Lista 1: " + str(l1))
+print("Lista 2: " + str(l2))
+print("Mezcla y orden ascendente: " + str(mezclar(l1,l2)))
 
 input("Pulsa enter para seguir")
 
@@ -73,6 +81,7 @@ print("6. La traspuesta de una matriz se obtiene intercambiado filas y columna. 
 
 input("Pulsa enter para seguir")
 
+"""
 def contar_letras(palabra):
 
 print("7. Escribe una función contar_letras(palabra) que tome una palabra como argumento y devuelva una lista de pares en la que aparece cada letra junto con el número de veces que aparece esa letra en la palabra.")
