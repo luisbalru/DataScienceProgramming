@@ -76,8 +76,20 @@ input("Pulsa enter para seguir")
 
 """
 def traspuesta(matriz):
+    traspuesta = []
+    for i in range(len(matriz)):
+        fila = []
+        for j in range(len(matriz[i])):
+            fila.append(matriz[j][i])
+        traspuesta.append(fila)
+    return(traspuesta)
+
 
 print("6. La traspuesta de una matriz se obtiene intercambiado filas y columna. Escribe una función que devuelva la traspuesta de una matriz.")
+matriz = [[1,2,3],[4,5,6],[7,8,9]]
+print("La matriz es " + str(matriz))
+t_matriz = traspuesta(matriz)
+print("La traspuesta es" + str(t_matriz))
 
 input("Pulsa enter para seguir")
 
