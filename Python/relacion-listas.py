@@ -146,10 +146,21 @@ print("La lista dada es " + str(l1))
 print("Resultado: " + str(suma_acumulada(l1)))
 input("Pulsa enter para seguir")
 
-"""
+
+import math
+
 def parejas(lista):
+    conjunto_lista = set(lista)
+    n_distintos = len(conjunto_lista)
+    # Permutaciones de n_distintos elementos más las parejas iguales (que sólo se cuentan una vez)
+    numero_parejas = math.factorial(n_distintos) + (len(lista) - n_distintos)
+    return(numero_parejas)
 
 print("10. Escribe una función parejas(lista) que calcule las parejas distintas de valores que aparecen en una lista.")
+
+lista = [0,1,1,2]
+print("La lista es " + str(lista))
+print("Número de parejas: " + str(parejas(lista)))
 
 input("Pulsa enter para seguir")
 
