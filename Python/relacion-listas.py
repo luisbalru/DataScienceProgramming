@@ -129,11 +129,21 @@ print("Las listas son " +  str(l2) + " y " + str(l1))
 print("Eliminar: " + str(eliminar(l2,l1)))
 input("Pulsa enter para seguir")
 
-"""
+
 def suma_acumulada(numeros):
+    lista = []
+    sum = 0
+    for i in range(len(numeros)):
+        for j in range(i+1):
+            sum += numeros[j]
+        lista.append(sum)
+        sum = 0
+    return(lista)
 
 print("9. Escribe una función suma_acumulada(numeros) a la que se le pase una lista de números y devuelva una lista en la que el elemento i-ésimo se obtiene como la suma de los elementos de la lista entre las posiciones 0 e i")
-
+l1 = list(range(5))
+print("La lista dada es " + str(l1))
+print("Resultado: " + str(suma_acumulada(l1)))
 input("Pulsa enter para seguir")
 
 """
@@ -143,6 +153,7 @@ print("10. Escribe una función parejas(lista) que calcule las parejas distintas
 
 input("Pulsa enter para seguir")
 
+"""
 def cadena_mas_larga(cadenas):
 
 print("11. Escribe una función cadena_mas_larga(cadenas) a la que se pasa una lista de palabras y que devuelva la palabra más larga.")
