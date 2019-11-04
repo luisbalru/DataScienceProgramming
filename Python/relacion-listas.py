@@ -174,24 +174,31 @@ print("Las palabras son " + str(l))
 print("La más larga es " + str(cadena_mas_larga(l)))
 input("Pulsa enter para seguir")
 
-"""
+
 def suma_primer_digito(numeros):
 
 print("12. Escribe una función suma_primer_digito(numeros) que devuelva la suma de los primeros dígitos de todos los números de la lista que se pasa como argumento.")
 
 input("Pulsa enter para seguir")
 
-"""
+
 def dispersa(v):
+    lista = []
+    for i in range(len(v)):
+        if v[i] != 0:
+            lista.append((v[i],i))
+    return(len(lista),lista)
 
 print("13. Escribe una función dispersa(v) a la que se le pase una lista representando un vector disperso y que devuelva el número de elementos del vector junto con una lista de pares (pos, elem) con cada una de las posiciones en las que hay un elemento no nulo y el elemento.")
-
+l = [0,0,0,1,0,0,1,0]
+print("La lista es " + str(l))
+print("Resultado: " +  str(dispersa(l)))
 input("Pulsa enter para seguir")
 
+"""
 def sacar_carta(baraja):
 
 print("14. Escribe una función que saque de forma aleatoria todas las cartas de una baraja hasta que quede vacía. Para ello debe usar unalista que tenga inicialmente todas las cartas.")
 
 
 input("Pulsa enter para seguir")
-"""
