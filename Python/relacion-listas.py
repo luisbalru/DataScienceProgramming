@@ -178,13 +178,16 @@ input("Pulsa enter para seguir")
 def suma_primer_digito(numeros):
     sum = 0
     for n in numeros:
-        sum = sum + [int(n) for d in str(n)][0]
+        if n > 0:
+            sum = sum + [int(d) for d in str(n)][0]
+        else:
+            sum = sum - [int(d) for d in str(-n)][0]
     return sum
 
 print("12. Escribe una función suma_primer_digito(numeros) que devuelva la suma de los primeros dígitos de todos los números de la lista que se pasa como argumento.")
 
 
-list = [10,11,12,13]
+list = [-10,11,12,13,14]
 print(list)
 suma = suma_primer_digito(list)
 print(suma)
@@ -225,3 +228,4 @@ print(baraja)
 cartas = sacar_carta(baraja)
 print(cartas)
 input("Pulsa enter para seguir")
+"""
