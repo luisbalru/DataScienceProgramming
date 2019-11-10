@@ -1,7 +1,8 @@
 # Introducción a la programación en Ciencia de Datos
 # Relación de ejercicios sobre listas
 # Autor: Luis Balderas Ruiz
-"""
+
+
 def sum_nums_lista(numeros):
     sum = 0
     for i in range(len(numeros)):
@@ -173,7 +174,7 @@ l = ["hola","holaa","holaaaa"]
 print("Las palabras son " + str(l))
 print("La más larga es " + str(cadena_mas_larga(l)))
 input("Pulsa enter para seguir")
-"""
+
 
 def suma_primer_digito(numeros):
     sum = 0
@@ -194,7 +195,7 @@ print(suma)
 
 input("Pulsa enter para seguir")
 
-"""
+
 
 def dispersa(v):
     lista = []
@@ -228,4 +229,3 @@ print(baraja)
 cartas = sacar_carta(baraja)
 print(cartas)
 input("Pulsa enter para seguir")
-"""
