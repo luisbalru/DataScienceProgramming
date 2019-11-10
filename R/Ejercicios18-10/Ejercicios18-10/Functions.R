@@ -38,10 +38,13 @@ print(l[1])
 print(l[2])
 
 ## EJERCICIO 5
-partir = function(v,x,y){
+partir = function(v,x,y = NULL){
   pos_x = match(x,v)
-  pos_y = match(y,v)
-  ifelse(is.na(pos_y) == F, return(v[pos_x:pos_y]),return(v[(-pos_x+1):0]))
+  if(!is.null(y)) {
+    pos_y = match(y,v)
+    ifelse(is.na(pos_y) == F, return(v[pos_x+1:pos_y]),return(v[(-pos_x+1):0]))
+  }
+  return(v[(-pos_x+1):0])
 }
 
 v = 1:10
