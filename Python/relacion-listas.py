@@ -173,14 +173,25 @@ l = ["hola","holaa","holaaaa"]
 print("Las palabras son " + str(l))
 print("La más larga es " + str(cadena_mas_larga(l)))
 input("Pulsa enter para seguir")
-
+"""
 
 def suma_primer_digito(numeros):
+    sum = 0
+    for n in numeros:
+        sum = sum + [int(n) for d in str(n)][0]
+    return sum
 
 print("12. Escribe una función suma_primer_digito(numeros) que devuelva la suma de los primeros dígitos de todos los números de la lista que se pasa como argumento.")
 
+
+list = [10,11,12,13]
+print(list)
+suma = suma_primer_digito(list)
+print(suma)
+
 input("Pulsa enter para seguir")
 
+"""
 
 def dispersa(v):
     lista = []
@@ -195,10 +206,22 @@ print("La lista es " + str(l))
 print("Resultado: " +  str(dispersa(l)))
 input("Pulsa enter para seguir")
 
-"""
+
+from random import randrange
+
 def sacar_carta(baraja):
+    cartas_sacadas = []
+    while(len(baraja) != 0):
+        i = randrange(len(baraja))
+        cartas_sacadas.append(baraja[i])
+        baraja.pop(i)
+    return cartas_sacadas
+
 
 print("14. Escribe una función que saque de forma aleatoria todas las cartas de una baraja hasta que quede vacía. Para ello debe usar unalista que tenga inicialmente todas las cartas.")
 
-
+baraja = ["1-O","1-E","1-B","1-C"]
+print(baraja)
+cartas = sacar_carta(baraja)
+print(cartas)
 input("Pulsa enter para seguir")
